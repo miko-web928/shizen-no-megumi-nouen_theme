@@ -1,0 +1,646 @@
+#header {
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    max-width: calc(100% - 74px);
+    background-color: #FFFFFF;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.29);
+    margin: 20px 37px 0 37px;
+    padding: 21px 30px 21px 40px;
+    border-radius: 100px;
+
+    &.scroll {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #ffffff;
+        width: 100%;
+        animation-name: anime;
+        animation-duration: 0.3s;
+    }
+
+    @include contents {
+        position: sticky;
+        top: 0;
+        left: 0;
+        transform: none;
+        max-width: 100%;
+        height: 50px;
+        border-radius: 0;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-common {
+        position: static;
+        transform: none;
+        margin-top: 20px;
+    }
+
+    @include contents {
+        position: sticky;
+        top: 0;
+        left: 0;
+        transform: none;
+        border-radius: 0;
+        height: 50px;
+        padding: 0 10px;
+
+        &.active {
+            position: absolute;
+            z-index: 4;
+        }
+
+        &.scroll {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: #ffffff;
+            width: 100%;
+            animation-name: anime;
+            animation-duration: 0.3s;
+        }
+    }
+
+    .header__logo {
+        @include xs {
+            max-width: 116px;
+        }
+    }
+
+    .header__pc {
+        div {
+            display: flex;
+            gap: 20px;
+
+            .nav__list--ac-color a {
+                background-color: $secondary;
+                color: #FFFFFF;
+                font-weight: bold;
+                border-radius: 24px;
+                padding: 16px 26px;
+            }
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            letter-spacing: 0.7px;
+
+            li a {
+                color: #3B4043;
+                font-weight: bold;
+
+                br {
+                    display: none;
+                }
+
+                span {
+                    display: none;
+                }
+            }
+        }
+
+        @include contents {
+            display: none;
+        }
+    }
+
+    .menu-btn {
+        display: none;
+
+        @include contents {
+            display: block;
+            position: fixed;
+            z-index: 5;
+            right: 5%;
+            top: 14px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            text-align: center;
+
+            span {
+                display: block;
+                position: absolute;
+                width: 20px;
+                height: 2px;
+                left: 6px;
+                background: $primary;
+                transition: 0.3s ease-in-out;
+
+                &:nth-of-type(1) {
+                    top: 0px;
+                }
+
+                &:nth-of-type(2) {
+                    top: 8px;
+                }
+
+                &:nth-of-type(2)::after {
+                    content: "MENU";
+                    /*3つ目の要素のafterにMenu表示を指定*/
+                    position: absolute;
+                    top: 5px;
+                    left: -2px;
+                    color: $primary;
+                    font-size: 0.6rem;
+                    text-transform: uppercase;
+                }
+            }
+
+            &.active span {
+                &:nth-child(1) {
+                    top: 6px;
+                    left: 6px;
+                    background: $primary;
+                    transform: rotate(-30deg);
+                }
+
+                &:nth-child(2) {
+                    top: 6px;
+                    background: $primary;
+                    transform: rotate(30deg);
+                }
+
+                &:nth-child(2)::after {
+                    content: "CLOSE";
+                    /*3つ目の要素のafterにClose表示を指定*/
+                    transform: translateY(0) rotate(-30deg);
+                    top: 5px;
+                    left: 2px;
+                }
+            }
+        }
+    }
+
+    .header__sp {
+        display: none;
+
+        @include contents {
+            display: block;
+            flex-direction: column;
+            position: fixed;
+            z-index: 4;
+            top: 50px;
+            right: -100%;
+            color: $text;
+            background-color: $background;
+            width: 100%;
+            height: calc(100vh - 50px);
+            opacity: 0;
+            transition: opacity .6s ease, visibility .6s ease;
+            display: flex;
+            align-items: center;
+
+            ul {
+                padding: 0 14px;
+                width: 100%;
+                position: relative;
+
+                li {
+                    list-style-type: none;
+                    padding: 0;
+                    width: 100%;
+                    transition: .4s all;
+                    border-bottom: 1px solid $primary;
+
+                    &:last-of-type {
+                        padding-bottom: 0;
+                    }
+
+                    &:hover {
+                        opacity: .7;
+                    }
+
+                    a {
+                        display: block;
+                        color: $text;
+                        font-weight: bold;
+                        padding: 16px 0;
+                        text-decoration: none;
+
+                        br {
+                            display: none;
+                        }
+
+                        span {
+                            margin-left: 10px;
+                            color: $secondary;
+                            font-weight: normal;
+                        }
+                    }
+                }
+
+                .nav__list {
+                    &-yazirusi {
+                        display: flex;
+                        justify-content: flex-end;
+                        position: relative;
+                        top: -8px;
+                        color: $primary;
+
+
+                        &::after {
+                            content: '';
+                            width: 25px;
+                            height: 5px;
+                            border-bottom: solid 2px;
+                            border-right: solid 2px;
+                            transform: skew(60deg);
+                        }
+                    }
+                }
+            }
+
+            &.active {
+                opacity: 1;
+                right: 0;
+            }
+
+            &-item {
+                margin: 0 auto;
+                margin-top: 20px;
+                text-align: center;
+                font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+
+                p {
+                    color: $primary;
+                    font-size: 0.9rem;
+                    font-weight: bold;
+                    line-height: 1.25rem;
+
+                    .tel-number {
+                        font-size: 1.25rem;
+                    }
+                }
+
+                .time {
+                    line-height: 1.25rem;
+                }
+
+                p+p {
+                    margin-top: 10px;
+                }
+
+                .button {
+                    text-align: center;
+                    margin: 0 auto;
+                    width: 300px;
+                }
+
+                .button a {
+                    display: block;
+                    background-color: $secondary;
+                    color: #fff;
+                    text-align: center;
+                    font-weight: bold;
+                    margin-top: 15px;
+                    padding: 16px 0;
+                    border-radius: 24px;
+
+                    &:hover {
+                        opacity: .7;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// page用
+#header-common {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: calc(100% - 74px);
+    background-color: #FFFFFF;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.29);
+    margin: 20px 37px 0 37px;
+    padding: 21px 30px 21px 40px;
+    border-radius: 100px;
+
+    &.scroll {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #ffffff;
+        width: 100%;
+        animation-name: anime;
+        animation-duration: 0.3s;
+        z-index: 4;
+    }
+
+    @include contents {
+        position: sticky;
+        top: 0;
+        left: 0;
+        transform: none;
+        max-width: 100%;
+        height: 50px;
+        border-radius: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-common {
+        position: static;
+        transform: none;
+        margin-top: 20px;
+        background-color: #FFFFFF;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include contents {
+            position: sticky;
+            top: 0;
+            left: 0;
+            transform: none;
+            border-radius: 0;
+            margin-top: 0;
+            height: 50px;
+            padding: 0 10px;
+
+            &.active {
+                position: absolute;
+                z-index: 4;
+            }
+
+            &.scroll {
+                position: fixed;
+                top: 0;
+                left: 0;
+                background: #ffffff;
+                width: 100%;
+                animation-name: anime;
+                animation-duration: 0.3s;
+                z-index: 4;
+            }
+        }
+    }
+
+    .header__logo {
+        @include xs {
+            max-width: 116px;
+        }
+    }
+
+    .header__pc {
+        div {
+            display: flex;
+            gap: 20px;
+
+            .nav__list--ac-color a {
+                background-color: $secondary;
+                color: #FFFFFF;
+                font-weight: bold;
+                border-radius: 24px;
+                padding: 16px 26px;
+            }
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            letter-spacing: 0.7px;
+
+            li a {
+                color: #3B4043;
+                font-weight: bold;
+
+                br {
+                    display: none;
+                }
+
+                span {
+                    display: none;
+                }
+            }
+        }
+
+        @include contents {
+            display: none;
+        }
+    }
+
+    .menu-btn {
+        display: none;
+
+        @include contents {
+            display: block;
+            position: fixed;
+            z-index: 5;
+            right: 5%;
+            top: 14px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            text-align: center;
+
+            span {
+                display: block;
+                position: absolute;
+                width: 20px;
+                height: 2px;
+                left: 6px;
+                background: $primary;
+                transition: 0.3s ease-in-out;
+
+                &:nth-of-type(1) {
+                    top: 0;
+                }
+
+                &:nth-of-type(2) {
+                    top: 8px;
+                }
+
+                &:nth-of-type(2)::after {
+                    content: "MENU";
+                    /*3つ目の要素のafterにMenu表示を指定*/
+                    position: absolute;
+                    top: 5px;
+                    left: -2px;
+                    color: $primary;
+                    font-size: 0.6rem;
+                    text-transform: uppercase;
+                }
+            }
+
+            &.active span {
+                &:nth-child(1) {
+                    top: 6px;
+                    left: 6px;
+                    background: $primary;
+                    transform: rotate(-30deg);
+                }
+
+                &:nth-child(2) {
+                    top: 6px;
+                    background: $primary;
+                    transform: rotate(30deg);
+                }
+
+                &:nth-child(2)::after {
+                    content: "CLOSE";
+                    /*3つ目の要素のafterにClose表示を指定*/
+                    transform: translateY(0) rotate(-30deg);
+                    top: 5px;
+                    left: 2px;
+                }
+            }
+        }
+    }
+
+    .header__sp {
+        display: none;
+
+        @include contents {
+            display: block;
+            flex-direction: column;
+            position: fixed;
+            z-index: 4;
+            top: 50px;
+            right: -100%;
+            color: $text;
+            background-color: $background;
+            width: 100%;
+            height: calc(100vh - 50px);
+            opacity: 0;
+            transition: opacity .6s ease, visibility .6s ease;
+            display: flex;
+            align-items: center;
+
+            ul {
+                padding: 0 14px;
+                width: 100%;
+                position: relative;
+
+                li {
+                    list-style-type: none;
+                    padding: 0;
+                    width: 100%;
+                    transition: .4s all;
+                    border-bottom: 1px solid $primary;
+
+                    &:last-of-type {
+                        padding-bottom: 0;
+                    }
+
+                    &:hover {
+                        opacity: .7;
+                    }
+
+                    a {
+                        display: block;
+                        color: $text;
+                        font-weight: bold;
+                        padding: 16px 0;
+                        text-decoration: none;
+
+                        br {
+                            display: none;
+                        }
+
+                        span {
+                            margin-left: 10px;
+                            color: $secondary;
+                            font-weight: normal;
+                        }
+                    }
+                }
+
+                .nav__list {
+                    &-yazirusi {
+                        display: flex;
+                        justify-content: flex-end;
+                        position: relative;
+                        top: -8px;
+                        color: $primary;
+
+
+                        &::after {
+                            content: '';
+                            width: 25px;
+                            height: 5px;
+                            border-bottom: solid 2px;
+                            border-right: solid 2px;
+                            transform: skew(60deg);
+                        }
+                    }
+
+                    &--ac-color {
+                        color: $secondary;
+                        font-weight: normal;
+                        margin-left: 10px;
+                    }
+                }
+            }
+
+            &.active {
+                opacity: 1;
+                right: 0;
+            }
+
+            &-item {
+                margin: 0 auto;
+                margin-top: 20px;
+                text-align: center;
+                font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+
+                p {
+                    color: $primary;
+                    font-size: 0.9rem;
+                    font-weight: bold;
+                    line-height: 1.25rem;
+
+                    .tel-number {
+                        font-size: 1.25rem;
+                    }
+                }
+
+                .time {
+                    line-height: 1.25rem;
+                }
+
+                p+p {
+                    margin-top: 10px;
+                }
+
+                .button {
+                    text-align: center;
+                    margin: 0 auto;
+                    width: 300px;
+                }
+
+                .button a {
+                    display: block;
+                    background-color: $secondary;
+                    color: #fff;
+                    text-align: center;
+                    font-weight: bold;
+                    margin-top: 15px;
+                    padding: 16px 0;
+                    border-radius: 24px;
+
+                    &:hover {
+                        opacity: .7;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,102 @@
+#about {
+    margin: 45px auto 55px auto;
+    .about__logo {
+        width: 315px;
+        text-align: center;
+        margin: 0 auto;
+        position: relative;
+        top: 115px;
+        left: 0;
+        @media screen and (max-width: 960px) {
+            width: 280px;
+            top: 130px;
+        }
+        @include tab {
+            width: 232px;
+            top: 89px;
+        }
+    }
+    .about__img {
+        &--01 {
+            width: 200px;
+            position: relative;
+            top: -53px;
+            @media screen and (max-width: 960px) {
+                width: 130px;
+                left: 10%;
+            }
+            @include tab {
+                width: 63px;
+                top: -30px;
+                left: calc(7vw);
+            }
+            @include xs {
+                left: 0;
+            }
+        }
+        &--02 {
+            width: 181px;
+            position: relative;
+            top: -24px;
+            left: 60%;
+            @media screen and (max-width: 960px) {
+                width: 118px;
+            }
+            @include tab {
+                width: 57px;
+                top: -30px;
+                left: 70%;
+            }
+            @include xs {
+                left: 60%;
+            }
+        }
+        &--03 {
+            width: 200px;
+            position: relative;
+            bottom: 69px;
+            left: 109px;
+            @media screen and (max-width: 960px) {
+                width: 130px;
+                left: 12%;
+            }
+            @include tab {
+                width: 86px;
+                bottom: 0;
+                left: 5%;
+            }
+        }
+        &--04 {
+            width: 235px;
+            position: relative;
+            bottom: 0;
+            left: 50%;
+            @media screen and (max-width: 960px) {
+                width: 150px;
+                left: 52%;
+            }
+            @include tab {
+                width: 92px;
+                left: 55%;
+            }
+            @include xs {
+                left: 45%;
+            }
+        }
+    }
+    .about__text {
+        text-align: center;
+        color: $text;
+        font-weight: bold;
+        line-height: 2rem;
+        position: relative;
+        top: -85px;
+        p+p {
+            margin-top: 30px;
+        }
+        @include tab {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+    }
+}

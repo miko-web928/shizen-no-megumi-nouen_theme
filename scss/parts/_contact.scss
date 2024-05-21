@@ -1,0 +1,74 @@
+.contact {
+    margin: 160px auto 113px auto;
+    text-align: center;
+    background-color: $secondary;
+    color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.29);
+
+    @include tab {
+        margin: 80px auto;
+    }
+    &__title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        padding-top: 53px;
+        color: #fff;
+        @include tab {
+            font-size: 1.9rem;
+            padding-top: 50px;
+        }
+    }
+    &__text {
+        margin-top: 40px;
+        font-size: 1.1rem;
+        line-height: 1.7rem;
+        color: #fff;
+        @include tab {
+            margin-top: 20px;
+        }
+    }
+    .button {
+        margin: 42px auto;
+        @include tab {
+            margin: 20px auto;
+        }
+        a {
+            background-color: #fff;
+            color: $primary;
+            padding: 25px 85px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border: 2px solid $primary;
+            border-radius: 50px;
+            &:hover {
+                opacity: .7;
+            }
+        }
+    }
+    &__address {
+        padding-bottom: 53px;
+        font-size: 1.3rem;
+        font-weight: bold;
+        font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium","游ゴシック", "Yu Gothic", sans-serif;
+        br {
+            display: none;
+            @include tab {
+                display: block;
+            }
+        }
+        @include tab {
+            padding-bottom: 34px;
+            text-align: center;
+        }
+        li+li {
+            margin-top: 15px;
+            @include tab {
+                margin-top: 20px;
+            }
+        }
+    }
+    &__tel {
+        font-size: 1.9rem;
+    }
+}

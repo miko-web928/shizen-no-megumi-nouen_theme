@@ -1,0 +1,192 @@
+#category {
+    .category__wrapper {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    .category__title {
+        margin-bottom: 50px;
+
+        @include tab {
+            margin-bottom: 20px;
+        }
+
+        span {
+            font-size: 2.5rem;
+            font-weight: bold;
+            @include title-border;
+
+            @include tab {
+                font-size: 1.9rem;
+            }
+        }
+    }
+
+    .slide__tabs {
+        align-items: center;
+        margin-bottom: 50px;
+        padding: 2% 0;
+
+        @include tab {
+            margin-bottom: 23px;
+        }
+    }
+
+    .tab-contents-wrap {
+        background-color: #fff;
+        padding: 80px 50px;
+        border-radius: 100px;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.29);
+        overflow: hidden;
+        height: auto;
+
+        .slick-list {
+            position: relative;
+
+            display: block;
+            overflow: hidden;
+
+            margin: 0;
+            padding: 0;
+        }
+
+        @include tab {
+            padding: 47px 19px 31px 19px;
+            border-radius: 50px;
+        }
+    }
+
+    .tab-contents {
+        overflow: hidden;
+        padding: 0 0.2%;
+
+        .pagination {
+            padding: 0 0.2%;
+        }
+    }
+
+    .news-item {
+        display: flex;
+        gap: 37px;
+        margin-bottom: 50px;
+
+        @include tab {
+            flex-direction: column;
+            position: relative;
+            margin-bottom: 30px;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.29);
+        }
+
+        &__date-category {
+            font-size: 14px;
+            margin-bottom: 10px;
+
+            @include tab {
+                font-size: 12px;
+                margin-bottom: 5px;
+                position: relative;
+            }
+        }
+
+        &__category {
+            margin-left: 29px;
+            padding: 6px 20px;
+            background-color: $primary;
+            color: #fff;
+            border-radius: 5px;
+
+            @include tab {
+                display: none;
+            }
+
+            &--sp {
+                display: none;
+
+                @include tab {
+                    display: inline-block;
+                    padding: 6px 20px;
+                    background-color: $primary;
+                    color: #fff;
+                    font-size: 14px;
+                    border-radius: 5px;
+                    position: absolute;
+                    top: 5%;
+                    right: 3%;
+                }
+            }
+        }
+
+        &__title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 18px;
+
+            @include tab {
+                font-size: 14px;
+                line-height: 21px;
+                margin-bottom: 0;
+            }
+        }
+
+        &__textarea {
+            font-size: 14px;
+            line-height: 1.5rem;
+
+            @include tab {
+                display: none;
+            }
+        }
+    }
+
+    .news-text {
+        @include tab {
+            position: absolute;
+            bottom: 0;
+            max-width: 800px;
+            width: 100%;
+            height: auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px 10px 10px 10px;
+        }
+
+        &__overflow {
+            @include tab {
+                position: absolute;
+                bottom: 0;
+                max-width: 800px;
+                width: 100%;
+                border-radius: 20px;
+                height: 100px;
+                overflow: hidden;
+            }
+        }
+    }
+
+    .news-image {
+        max-width: 250px;
+        max-height: 150px;
+        width: 100%;
+        height: -webkit-fill-available;
+        object-fit: cover;
+        border-radius: 20px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.29);
+        overflow: hidden;
+
+        @include tab {
+            max-width: 800px;
+            max-height: inherit;
+        }
+
+        img {
+            aspect-ratio: 25 / 15;
+            object-fit: cover;
+
+            @include tab {
+                object-fit: cover;
+                aspect-ratio: 305 / 199;
+            }
+        }
+    }
+}

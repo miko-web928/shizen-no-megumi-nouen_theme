@@ -1,0 +1,260 @@
+#form {
+    margin-bottom: 160px;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+
+    @include contents {
+        margin-bottom: 60px;
+    }
+}
+
+.form {
+    &__wrapper {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    &__title {
+        margin-bottom: 45px;
+
+        @include tab {
+            margin-bottom: 20px;
+        }
+
+        span {
+            font-size: 2.5rem;
+            font-weight: bold;
+            @include title-border;
+
+            @include tab {
+                font-size: 1.9rem;
+            }
+        }
+    }
+
+    &__text {
+        margin: 45px auto 50px auto;
+
+        @include contents {
+            margin: 20px auto 40px auto;
+        }
+    }
+
+    &__wrap {
+        background-color: #fff;
+        margin: 45px auto 160px auto;
+        padding: 80px 180px;
+        border-radius: 100px;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.29);
+
+        @include contents {
+            margin: 40px auto 60px auto;
+            padding: 30px 20px;
+            border-radius: 50px;
+        }
+    }
+
+    // ブラウザごとの差をなくす設定
+    input,
+    select {
+        -webkit-appearance: none;
+        appearance: none;
+        border: 1px solid #000;
+        border-radius: 0px;
+    }
+
+    // end
+
+    input,
+    select {
+        width: 500px;
+        padding: 17px 20px;
+        border: 1px solid $primary;
+        border-radius: 5px;
+        color: $text;
+
+        @media screen and (max-width: 670px) {
+            max-width: 400px;
+            width: 100%;
+        }
+    }
+
+    input[type="submit"] {
+        width: 200px;
+        border-radius: 50px;
+        border: 2px solid $primary;
+        text-align: center;
+        font-weight: bold;
+        color: $primary;
+        padding: 17px 66px;
+        letter-spacing: 1.6px;
+    }
+
+    select {
+        cursor: pointer;
+        width: 400px;
+
+        @media screen and (max-width: 670px) {
+            max-width: 305px;
+            width: 100%;
+        }
+    }
+
+    label {
+        display: block;
+        color: $text;
+        font-weight: bold;
+
+        p {
+            font-weight: normal;
+        }
+    }
+
+    .form__flex {
+        display: flex;
+        align-items: center;
+
+        p {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .form-require {
+            font-size: 12px;
+            font-weight: normal;
+            color: #fff;
+            background-color: $primary;
+            padding: 5px;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+    }
+
+    .custom-select {
+        position: relative;
+
+        &::after {
+            position: absolute;
+            top: 20%;
+            /* 矢印の位置 */
+            left: 60%;
+            /* 矢印の位置 */
+            width: 20px;
+            /* 矢印の大きさ */
+            height: 20px;
+            /* 矢印の大きさ */
+            border-top: 3px solid $primary;
+            /* 矢印の線 */
+            border-right: 3px solid $primary;
+            /* 矢印の線 */
+            -webkit-transform: rotate(135deg);
+            /* 矢印の傾き */
+            transform: rotate(135deg);
+            /* 矢印の傾き */
+            pointer-events: none;
+            /* 矢印部分もクリック可能にする */
+            content: "";
+
+            @include contents {
+                left: calc(100vw - 63%);
+            }
+        }
+
+        &:active::after {
+            top: 30%;
+            -webkit-transform: rotate(-45px);
+            transform: rotate(-45deg);
+        }
+    }
+
+    textarea {
+        width: 600px;
+        height: 150px;
+        padding: 17px 20px;
+        border: 1px solid $primary;
+        border-radius: 5px;
+
+        @media screen and (max-width: 670px) {
+            max-width: 500px;
+            width: 100%;
+        }
+    }
+
+    .form-button {
+        text-align: center;
+        margin: auto;
+        margin-top: 50px;
+        margin-bottom: 0 !important;
+
+        @include contents {
+            margin-top: 30px;
+        }
+    }
+
+    .wpcf7-previous,
+    .wpcf7-submit {
+        width: 200px;
+        border: 2px solid $primary;
+        border-radius: 50px;
+        font-weight: bold;
+        color: $primary;
+        padding: 17px 66px;
+    }
+
+    .form__answer {
+        font-weight: normal;
+        margin-top: 14px;
+    }
+
+    .form__confirm:not(:last-child) {
+        margin-bottom: 30px !important;
+
+        @include contents {
+            margin-bottom: 32px !important;
+        }
+    }
+}
+
+// contact-form7
+.wpcf7-form>div:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+input.wpcf7-form-control,
+textarea.wpcf7-form-control,
+.custom-select {
+    margin-top: 10px;
+}
+
+input.wpcf7-submit {
+    margin-top: 0;
+}
+
+.wpcf7 .wpcf7-spinner {
+    display: none;
+}
+
+.wpcf7-response-output {
+    display: none;
+}
+
+.wpcf7-form.sent .wpcf7-response-output {
+    display: none;
+}
+
+.wpcf7-not-valid-tip,
+.wpcf7-response-output.wpcf7-validation-errors {
+    color: #D53838;
+    margin-top: 5px;
+}
+
+.form input.wpcf7-not-valid,
+.form textarea.wpcf7-not-valid,
+wpcf7-form .form select {
+    border: 1px solid #D53838;
+}
+
+.wpcf7 input:focus-visible,
+.wpcf7 textarea:focus-visible,
+.wpcf7 select:focus-visible {
+    outline: none;
+}

@@ -1,0 +1,20 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links ul {
+    display: flex;
+
+    a,
+    span {
+        display: inline-block;
+        margin-right: 7px;
+        padding: 16px 22px;
+        color: $primary;
+        background-color: #FAFAFA;
+        border: 2px solid #F0F3F5;
+        border-radius: 10px;
+    }
+}

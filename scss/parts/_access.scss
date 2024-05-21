@@ -1,0 +1,158 @@
+.access {
+    position: static;
+    margin-top: 120px;
+    margin-bottom: 160px;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+
+    @include tab {
+        margin: 80px auto;
+    }
+
+    &__title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 50px;
+
+        span {
+            @include title-border
+        }
+
+        @include tab {
+            font-size: 1.9rem;
+        }
+    }
+
+    &__table {
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.29);
+        border-radius: 100px;
+        overflow: hidden;
+        @include tab {
+            border-radius: 50px;
+        }
+
+        th {
+            background-color: $primary;
+            color: $text;
+            padding-top: 30px;
+            padding-left: 50px;
+            line-height: 2.1rem;
+
+            @include tab {
+                padding-left: 20px;
+            }
+
+            a {
+                text-decoration: underline;
+                padding-top: 27px;
+            }
+
+            &.address-1 {
+                padding-top: 80px;
+                @include tab {
+                    padding-top: 32px;
+                }
+            }
+
+            &.address-4 {
+                padding-bottom: 50px;
+            }
+
+            &.th-map {
+                padding-top: 30px;
+                @include tab {
+                    white-space: nowrap;
+                    padding-top: 0;
+                    padding-right: 16px;
+                    line-height: 1.5rem;
+                }
+                br {
+                    @include tab {
+                        line-height: 0;
+                    }
+                }
+                a {
+                    @include tab {
+                        font-size: 0.75rem;
+                        line-height: 1.2rem;
+                        padding-top: 11px;
+                        padding-bottom: 33px;
+                    }
+                }
+            }
+        }
+
+        td {
+            padding-left: 50px;
+            padding-top: 34px;
+            color: $text;
+            @include tab {
+                padding-top: 31px;
+                padding-left: 20px;
+                padding-right: 20px;
+                font-size: 0.9rem;
+            }
+
+            &.address-1 {
+                padding-top: 80px;
+                @include tab {
+                    padding-top: 33px;
+                }
+            }
+
+            &.address-4 {
+                padding-bottom: 50px;
+            }
+
+            &.td-map {
+                padding: 0;
+                height: 0;
+                overflow: hidden;
+                padding-bottom: 31%;
+                position: relative;
+
+                iframe {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    height: 100%;
+                    width: 100%;
+                }
+
+                @include tab {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    // sp版マップ
+    &__tr-spmap {
+        display: none;
+
+        .td-map--colspan {
+            padding-top: 0;
+            padding-left: 0;
+            padding-bottom: 250px;
+            position: relative;
+            iframe {
+                position: absolute;
+                // left: 0;
+                // top: 0;
+                height: 250px;
+                width: 100%;
+            }
+        }
+
+        .td-map--sp{
+            position: relative;
+            padding: 0;
+        }
+
+        @include tab {
+            display: contents;
+        }
+    }
+}

@@ -1,0 +1,152 @@
+.news {
+    max-width: 1920px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+
+    &-contents {
+        padding-top: 80px;
+        // display: flex;
+        // padding-bottom: 63px;
+        padding-bottom: 240px;
+        max-width: 960px;
+        margin: 0 auto;
+        position: relative;
+
+        @include tab {
+            flex-direction: column;
+            padding: 0;
+            // overflow: hidden;
+        }
+
+
+    }
+
+    &__left {
+        position: relative;
+
+        @include tab {
+            max-width: $tab;
+        }
+    }
+
+    &__title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 50px;
+
+        span {
+            @include title-border
+        }
+
+        @include tab {
+            font-size: 1.9rem;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__text {
+        line-height: 27px;
+    }
+
+    &__right {
+        background-color: #fff;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.29);
+        border-radius: 100px;
+        // max-width: 960px;
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        z-index: 2;
+
+        // margin: 0 calc(50% - 50vw);
+        // padding: 4px calc(50vw - 50% + 8px);
+        width: 100vw;
+
+        @include tab {
+            border-radius: 50px;
+            position: static;
+            margin-top: 30px;
+            margin-right: 100vw;
+            padding-right: 20%;
+        }
+
+        dl {
+            padding: 80px 50px;
+
+            // margin: 0px calc(50% - 50vw);
+            // padding: 4px calc(-50% + 8px + 50vw);
+
+            @include tab {
+                padding: 30px 0 30px 21px;
+                max-width: 318px;
+            }
+        }
+
+        dt {
+            font-weight: normal;
+            margin-bottom: 20px;
+
+            @include tab {
+                font-size: 0.9rem;
+                margin-bottom: 10px;
+            }
+
+            span {
+                color: #fff;
+                background-color: $primary;
+                border-radius: 5px;
+                margin-left: 23px;
+                padding: 6px 20px;
+
+                @include tab {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+
+        dd {
+            font-weight: bold;
+            font-size: 1.3rem;
+
+            @include tab {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    &__item {
+        margin-bottom: 40px;
+
+        @include tab {
+            margin-bottom: 30px;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .button {
+        position: absolute;
+        top: 65%;
+        left: 3%;
+        z-index: 2;
+
+        @include tab {
+            position: static;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        a {
+            font-size: 1.3rem;
+            color: $primary;
+            background-color: #fff;
+            text-align: center;
+            border: 2px solid $primary;
+            border-radius: 50px;
+            padding: 22px 104px;
+        }
+    }
+}

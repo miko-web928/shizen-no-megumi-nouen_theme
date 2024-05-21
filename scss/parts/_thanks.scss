@@ -1,0 +1,74 @@
+.form {
+    .form__wrap {
+        &.thanks {
+            text-align: center;
+            font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium","游ゴシック", "Yu Gothic", sans-serif;
+            padding-bottom: 82px;
+            @include contents {
+                padding-bottom: 30px;
+            }
+
+            p {
+                margin: 26px 0 40px 0;
+                line-height: 24px;
+                @include contents {
+                    margin: 20px 0 30px 0;
+                }
+            }
+        }
+    }
+
+    &__thanks-message {
+        font-size: 1.3rem;
+        font-weight: bold;
+        line-height: 34px;
+        margin-bottom: 26px;
+        @include contents {
+            margin-bottom: 20px;
+        }
+    }
+
+    .contact__address {
+        &.thanks {
+            color: $primary;
+            padding: 0;
+            margin-bottom: 50px;
+            @include contents {
+                margin-bottom: 30px;
+                font-size: 14px;
+            }
+            .pc-only {
+                @include contents {
+                    display: none;
+                }
+            }
+            .contact__tel {
+                @include contents {
+                    font-size: 20px;
+                    margin-top: 5px;
+                }
+            }
+            .contact__time {
+                @include contents {
+                    line-height: 21px;
+                }
+            }
+            li + li {
+                @include contents {
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+
+    .form__button-top {
+        a {
+            width: 200px;
+            padding: 17px 55px;
+            color: $primary;
+            font-weight: bold;
+            border: 2px solid $primary;
+            border-radius: 50px;
+        }
+    }
+}

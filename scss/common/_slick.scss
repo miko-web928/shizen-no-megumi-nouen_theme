@@ -1,0 +1,93 @@
+// 読み込み時にslickが縦並びになるのを防ぐ
+.slide__tabs,
+.slide__list {
+    opacity: 0;
+    transition: opacity 0.3s linear;
+}
+
+.slick-initialized {
+    opacity: 1;
+}
+
+#works .tab-contents-wrap .slick-slide {
+    margin: auto 24px;
+}
+
+#works .works__category .slick-track {
+    margin: auto;
+    @include contents {
+        margin: 0 !important;
+    }
+}
+
+// タブ
+.slide__tabs {
+    width: 100%;
+    padding: 1px 2px;
+
+    &-wrap {
+        padding: 5px 0;
+        position: relative;
+        top: 0;
+        z-index: 1;
+        transition: All 0.2s ease;
+    }
+
+    .tab-item {
+        width: 126px;
+        text-align: center;
+        padding: 14px 0;
+        border-radius: 50px;
+        background-color: #fff;
+        color: $secondary;
+        font-weight: bold;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.29);
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    .slick-active {
+        &.tab-item {
+            margin-top: 0;
+            padding: 15px 10px;
+            border: none;
+            background: $primary;
+            color: #fff;
+            font-weight: bold;
+        }
+    }
+
+    .slick-slide:not(:last-child) {
+        margin-right: 16px;
+    }
+
+    // スワイプするための設定
+    .slick-list {
+        overflow-x: scroll; // 横スクロール可能に
+        // PC用にスクロールバーを非表示
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .slick-track {
+        // タブエリアの横幅に合わせる
+        width: max-content !important;
+        // カレントタブが左端に固定にならないようにリセット
+        transform: none !important;
+
+        height: 100% !important;
+
+        padding: 0.4% 0.8% !important;
+
+        @include tab {
+            padding: 1% 0.5% !important;
+        }
+    }
+}

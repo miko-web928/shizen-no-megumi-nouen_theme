@@ -1,0 +1,235 @@
+.single__title {
+    margin-bottom: 45px;
+
+    @include tab {
+        margin-bottom: 20px;
+    }
+
+    span {
+        font-size: 2.5rem;
+        font-weight: bold;
+        letter-spacing: 4px;
+
+        @include tab {
+            font-size: 1.55rem;
+            letter-spacing: 2.5px;
+        }
+    }
+}
+
+.section__wrap {
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+    background-color: #fff;
+    margin: 45px auto 160px auto;
+    padding: 50px 180px;
+    border-radius: 100px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.29);
+
+    @include contents {
+        margin: 40px auto 60px auto;
+        padding: 30px 20px;
+        border-radius: 50px;
+    }
+
+    .single__thumbnail {
+        border-radius: 20px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.29);
+        margin-bottom: 29px;
+        overflow: hidden;
+
+        @include contents {
+            margin-bottom: 20px;
+        }
+    }
+
+    .post__index {
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 30px;
+        border: 2px solid $primary;
+        border-radius: 20px;
+        margin-bottom: 80px;
+        font-weight: bold;
+        color: $text;
+
+        @include contents {
+            padding: 15px;
+            padding-bottom: 30px;
+            margin-bottom: 43px;
+        }
+
+        div {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+        }
+
+        .index-of-lists {
+            padding-left: 50px;
+            margin-bottom: 0;
+            list-style-type: auto;
+
+            @include contents {
+                padding-left: 15px;
+                font-size: 0.85rem;
+            }
+
+            .index-of-list {
+                margin-top: 10px;
+
+                @include contents {
+                    margin-top: 12px;
+                }
+
+                &::marker {
+                    color: $secondary;
+                }
+
+                &:first-of-child {
+                    margin-top: 0;
+                }
+            }
+
+            .index-of-lists--marker {
+                list-style-type: inside;
+
+                .index-of-list--marker {
+                    margin-left: 16px;
+                    margin-top: 10px;
+                    list-style-type: disc;
+
+                    &::marker {
+                        color: $primary;
+                    }
+
+                    @include contents {
+                        margin-left: calc(31px - 15px);
+                        margin-top: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-bottom: 20px;
+
+        @include contents {
+            margin-bottom: 21px;
+        }
+    }
+
+    .post__title--h2 {
+        display: inline-block;
+        font-size: 1.5rem;
+        font-weight: bold;
+        border-bottom: 2px solid $primary;
+
+        @include contents {
+            font-size: 1.25rem;
+        }
+    }
+
+    .post__title--h3 {
+        display: inline-block;
+        font-size: 1.25rem;
+        font-weight: bold;
+        border-left: 10px solid $primary;
+        padding-left: 14.5px;
+
+        @include contents {
+            font-size: 1.15rem;
+        }
+    }
+
+    p {
+        margin-bottom: 40px;
+        line-height: 1.7rem;
+        letter-spacing: 0;
+    }
+
+    ul {
+        list-style: inside;
+        color: $text;
+        line-height: 1.7rem;
+        margin-bottom: 40px;
+
+        @include contents {
+            margin-bottom: 20px;
+        }
+    }
+
+    .post__column {
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+
+        @include contents {
+            flex-direction: column;
+        }
+
+        .post__text {
+            width: 100%;
+        }
+
+        .post__img {
+            width: 100%;
+            height: auto;
+
+            img {
+                box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.29);
+                border-radius: 20px;
+                overflow: hidden;
+            }
+        }
+    }
+
+    .post__column p {
+        margin-bottom: 0;
+    }
+}
+
+.single-item__date-category {
+    margin: 25px 0 50px 0;
+    display: flex;
+    align-items: center;
+    color: $text;
+
+    @include contents {
+        margin: 15px 0;
+    }
+
+    .single-item__category {
+        margin-left: 18px;
+        padding: 6px 20px;
+        color: #fff;
+        background-color: $primary;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+}
+
+.section__button-top {
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 0;
+
+    @include contents {
+        margin-top: 40px;
+    }
+
+    a {
+        padding: 25px 96px;
+        color: $primary;
+        font-weight: bold;
+        letter-spacing: 2px;
+        border: 2px solid $primary;
+        border-radius: 50px;
+    }
+}

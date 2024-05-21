@@ -1,0 +1,79 @@
+.fadeIn {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s;
+    transform: translateY(150px);
+
+    &.is-active {
+        /*要素を表示させる*/
+        opacity: 1;
+        visibility: visible;
+        /*元の位置に戻す*/
+        transform: translateY(0);
+    }
+}
+
+
+
+.fadeIn1s {
+    animation: fadeIn1s 1s;
+}
+
+@keyframes fadeIn1s {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+
+        opacity: 1;
+    }
+}
+
+.fadeIn2s {
+
+    animation: fadeIn2s 2s;
+}
+
+@keyframes fadeIn2s {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+
+        opacity: 1;
+    }
+}
+
+.fadeIn3s {
+
+    animation: fadeIn3s 3s;
+}
+
+@keyframes fadeIn3s {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+
+        opacity: 1;
+    }
+}
+
+.fadeIn4s {
+
+    animation: fadeIn4s 4s;
+}
+
+@keyframes fadeIn4s {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+
+        opacity: 1;
+    }
+}

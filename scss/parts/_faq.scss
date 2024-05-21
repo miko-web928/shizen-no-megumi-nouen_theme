@@ -1,0 +1,158 @@
+.faq {
+    margin: 120px auto;
+
+    &__title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-align: center;
+
+        span {
+            @include title-border
+        }
+
+        @include tab {
+            font-size: 1.9rem;
+        }
+    }
+
+    .accordion-list {
+        background-color: #fff;
+        margin: 50px auto;
+        padding: 0px 40px;
+        font-size: 1.3rem;
+        line-height: 2.1rem;
+        border: 3px solid $primary;
+        border-radius: 50px;
+        position: relative;
+
+        @include tab {
+            margin: 30px auto;
+            padding: 0 19px;
+            border-radius: 30px;
+        }
+
+        &::before {
+            content: "";
+            width: 20px;
+            height: 6px;
+            position: absolute;
+            background-color: #fff;
+            transform: rotate(90deg);
+            top: 50%;
+            left: -10px;
+        }
+
+        &::after {
+            content: "";
+            width: 20px;
+            height: 6px;
+            position: absolute;
+            background-color: #fff;
+            transform: rotate(90deg);
+            top: 50%;
+            right: -10px;
+        }
+    }
+
+    .faq-item__q {
+        display: flex;
+        align-items: center;
+        padding: 25px 0;
+        font-weight: bold;
+        font-size: 1.3rem;
+        color: $text;
+        cursor: pointer;
+        position: relative;
+
+        @include tab {
+            font-size: 1rem;
+            padding: 30px 0;
+            padding-right: calc(47px - 21px);
+            line-height: 24px;
+        }
+
+        &::before {
+            content: '';
+            width: 21px;
+            height: 3px;
+            background-color: $primary;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: rotate(90deg);
+            transition: all .3s ease-in-out;
+
+            @include tab {
+                width: 15px;
+                right: 5px;
+            }
+        }
+
+        &::after {
+            content: '';
+            // display: inline-block;
+            width: 21px;
+            height: 3px;
+            background-color: $primary;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transition: all .3s ease-in-out;
+
+            @include tab {
+                width: 15px;
+                right: 5px;
+            }
+        }
+
+        &.open::before {
+            transform: rotate(180deg);
+        }
+
+        &.open::after {
+            opacity: 0;
+        }
+    }
+
+    .faq-item__q-head {
+        color: $primary;
+        font-size: 2.2rem;
+        font-weight: normal;
+        margin-right: 22px;
+
+        @include tab {
+            font-size: 1.55rem;
+        }
+    }
+
+    .accordion-text {
+        display: none;
+
+        .faq-item__a {
+            display: flex;
+            align-items: center;
+            padding: 30px 0 44px 0;
+
+            &-text {
+                color: $text;
+                font-size: 20px;
+
+                @include tab {
+                    font-size: 1rem;
+                    line-height: 1.5rem;
+                }
+            }
+        }
+    }
+
+    .faq-item__a-head {
+        color: $secondary;
+        font-size: 2.2rem;
+        font-weight: normal;
+        margin-right: 23px;
+
+        @include tab {
+            font-size: 1.55rem;
+        }
+    }
+}

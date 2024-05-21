@@ -1,0 +1,46 @@
+html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "Archivo Narrow", "Archivo Narrow Medium", "Archivo Narrow SemiBold", "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+    margin: 0 auto;
+    background-color: $background;
+}
+
+img,
+picture {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+a,
+span {
+    display: inline-block;
+}
+
+h1,
+h2,
+h3,
+h4,
+a,
+p {
+    font-size: 100%;
+    color: #555555;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+.br-sp {
+    display: none;
+
+    @include tab {
+        display: block;
+    }
+}
